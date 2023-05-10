@@ -9,6 +9,11 @@ Modules/Packages used:
 * optparse
 * time
 * colorama
+<!-- -->
+Install the dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ## Input
 It takes the following arguments from the command that is used to run the Python Program:
