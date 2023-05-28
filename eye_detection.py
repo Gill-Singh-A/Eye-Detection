@@ -85,7 +85,7 @@ if __name__ == "__main__":
         cv2.waitKey()
     else:
         video_capture = cv2.VideoCapture(0)
-        while True:
+        while cv2.waitKey(1) != 113:
             ret, frame = video_capture.read()
             if not ret:
                 display('-', "Failed to get Frame from the Camera")
@@ -98,8 +98,6 @@ if __name__ == "__main__":
                 eyes = detect_eye(face_image, eye_classifier, localize=True)
                 print(f"{Fore.CYAN}{Back.MAGENTA}{len(eyes)}{Back.RESET} {Fore.GREEN}Eyes Detected{Fore.RESET}", end='')
             cv2.imshow("Camera", frame)
-            if cv2.waitKey(1) >= 0:
-                break
         video_capture.release()
         cv2.destroyAllWindows()
     print()
